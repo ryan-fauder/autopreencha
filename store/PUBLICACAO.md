@@ -61,41 +61,45 @@ MIT
 Não é necessária: a extensão não coleta, armazena remotamente nem transmite nenhum dado
 (`data_collection_permissions: none`).
 
-**Descrição**
+**Descrição** (Markdown)
 
-```
-Autopreencha preenche formulários com dados brasileiros fictícios para desenvolvedores, QAs e
-estudantes testarem software. Todos os documentos têm dígitos verificadores válidos.
+```markdown
+**Autopreencha** preenche formulários com dados brasileiros fictícios — e válidos — para quem desenvolve, testa ou estuda software. Todos os documentos saem com dígitos verificadores corretos.
 
-O QUE GERA
-• Pessoa: nome, nascimento, CPF, RG, CNH, PIS/PASEP, CNS (Cartão SUS), título de eleitor, passaporte,
-  e-mail, celular, filiação, cor/raça, orientação sexual, identidade de gênero, tipo sanguíneo e endereço
-• Empresa: CNPJ, CNPJ alfanumérico (novo padrão da Receita), Inscrição Estadual das 27 UFs, razão social
-• Veículo: RENAVAM, placa antiga, placa Mercosul, chassi, marca/modelo
-• Financeiro: cartão de crédito (Visa, Mastercard, Elo, Amex, Hipercard, Diners, Discover, JCB) e
-  agência/conta (DV oficial de BB, Bradesco, Itaú e Caixa)
-• Imóvel: tipo, áreas, valores, inscrição de IPTU, matrícula e Código Nacional de Matrícula (CNM)
-• Consulta de códigos de bancos
+**O que gera**
 
-COMO USAR
-• Clique em qualquer valor para copiar
-• Botão "inserir" coloca o valor direto no campo selecionado da página
-• "Preencher página" (Alt+Shift+P) preenche o formulário inteiro com uma mesma pessoa fictícia
-• Botão direito em um campo → Autopreencha → escolha o tipo
-• Fixe na barra lateral para mantê-la aberta enquanto testa
-• Com ou sem máscara, e coerente com a UF escolhida (endereço, DDD, CPF, título e IE)
+- **Pessoa:** nome, nascimento, CPF, RG, CNH, PIS/PASEP, CNS (Cartão SUS), título de eleitor, passaporte, e-mail, celular, filiação, cor/raça, orientação sexual, identidade de gênero, tipo sanguíneo e endereço
+- **Empresa:** CNPJ, CNPJ alfanumérico (novo padrão da Receita Federal), Inscrição Estadual das 27 UFs, razão social
+- **Veículo:** RENAVAM, placa antiga, placa Mercosul, chassi
+- **Financeiro:** cartão de crédito (Visa, Mastercard, Elo, Amex, Hipercard, Diners, Discover, JCB) e agência/conta com DV oficial de BB, Bradesco, Itaú e Caixa
+- **Imóvel:** áreas, valores, inscrição de IPTU, matrícula e Código Nacional de Matrícula (CNM)
+- Consulta de códigos de bancos
 
-PRIVACIDADE
-Tudo é gerado localmente. Nenhum dado é coletado ou enviado.
+**Como usar**
 
-Os dados são fictícios e servem apenas para testes. A má utilização é de responsabilidade do usuário.
+- **Preencher página** (ou Alt+Shift+P): preenche o formulário inteiro com uma mesma pessoa fictícia
+- Botão direito em um campo → **Autopreencha** → escolha o tipo
+- Clique em qualquer valor para copiar, ou use **inserir** para colocá-lo no campo selecionado
+- **Fixar** abre a extensão na barra lateral, que fica aberta enquanto você testa
+- Com ou sem máscara, e coerente com a UF escolhida (endereço, DDD, CPF, título e IE)
+
+**Privacidade**
+
+Tudo é gerado localmente. Nenhum dado é coletado ou enviado, e a extensão não faz requisições externas.
+
+*Os dados são fictícios e servem apenas para testes. A má utilização é de responsabilidade do usuário.*
 ```
 
 **Notas para o revisor**
 
 ```
-No remote code, no minification, no bundling: the uploaded package is the readable source.
-All data is generated locally; nothing is collected or transmitted.
+No remote code, no minification, no bundling: the uploaded package is the readable source,
+written as native ES modules (background uses "type": "module"; the popup loads popup/main.js as a module).
+All data is generated locally; nothing is collected or transmitted. The extension makes no network requests.
+
+data/ceps.js is a static data table (real postal codes with street names) built once from the public
+ViaCEP API by scripts/build-ceps.mjs in the source repository; it contains data only, no code.
+The bundled font (Inter Tight) is under SIL OFL, license included in fonts/OFL.txt.
 
 Permissions:
 - menus: context menu to insert generated values into the focused field.

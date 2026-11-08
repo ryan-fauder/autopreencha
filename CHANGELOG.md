@@ -3,6 +3,24 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento
 [SemVer](https://semver.org/lang/pt-BR/). A versão também fica em `src/manifest.json` e `package.json`.
 
+## [1.4.0] - 2026-11-08
+
+### Corrigido
+- **CEP agora é real.** Antes o CEP era sorteado dentro da faixa da cidade e quase nunca existia, o que
+  quebrava formulários que consultam o CEP (ex.: ViaCEP). Agora vem de uma base de 800 CEPs reais (34 cidades),
+  com logradouro e bairro verdadeiros e número dentro da faixa e do lado (par/ímpar) do CEP.
+- Inscrição Estadual do AM sorteava o primeiro dígito só uma vez por sessão.
+
+### Alterado
+- Código reorganizado em camadas (`data`, `core`, `content`, `platform`, `features`, `background`, `popup`)
+  com módulos ES nativos e padrões Strategy, Registry, Factory, Repository, Adapter, Observer e Command.
+  A injeção na página deixou de estar duplicada entre popup e background.
+- Regras de reconhecimento de campos separadas do motor de preenchimento.
+- Testes organizados por camada; geração reproduzível com semente.
+
+### Adicionado
+- `docs/ARQUITETURA.md` e `scripts/build-ceps.mjs` (`npm run ceps`).
+
 ## [1.3.0] - 2026-11-08
 
 ### Alterado

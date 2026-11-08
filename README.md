@@ -16,7 +16,7 @@ formulário inteiro com um clique.
 |---|---|
 | Pessoa | Nome, sexo, nascimento/idade, mãe, pai, **CPF** (respeita a região fiscal da UF), **RG** (SSP-SP), **CNH**, **PIS/PASEP**, **CNS**, **Título de eleitor** (código da UF), **Passaporte**, e-mail, usuário/senha, estado civil, profissão, cor/raça, orientação sexual, identidade de gênero, tipo sanguíneo, altura, peso |
 | Empresa | Razão social, nome fantasia, **CNPJ**, **CNPJ alfanumérico** (IN RFB 2.229/2024), **Inscrição Estadual** das 27 UFs, inscrição municipal, data de abertura, site |
-| Contato | Celular e telefone fixo (DDD coerente com a cidade), **CEP** (faixa real da cidade), endereço completo |
+| Contato | Celular e telefone fixo (DDD coerente com a cidade), **CEP real** (base dos Correios via ViaCEP, com logradouro, bairro e número dentro da faixa do CEP), endereço completo |
 | Veículo | **RENAVAM**, placa antiga (só séries emitidas, até SAV), placa Mercosul, chassi, marca/modelo/ano/cor |
 | Financeiro | Agência e conta (DV oficial para BB, Bradesco, Itaú e Caixa), **cartão de crédito** (Luhn) de 8 bandeiras com validade e CVV |
 | Imóvel | Tipo, áreas, cômodos, valores de venda/aluguel/condomínio/IPTU, inscrição de IPTU, cartório, matrícula e **CNM** (Provimento CNJ 143/2023, ISO 7064 MOD 97-10), proprietário |
@@ -70,6 +70,7 @@ npm run lint     # validação da Mozilla (web-ext lint)
 npm run build    # gera o .zip em dist/ para publicar no addons.mozilla.org
 npm run sign     # envia uma nova versão ao AMO (requer chaves de API)
 npm run docs:pdf # gera docs/style-guide.pdf a partir do HTML (requer Google Chrome)
+npm run ceps     # atualiza src/data/ceps.js com CEPs reais (consulta a API ViaCEP)
 ```
 
 ## Publicação
@@ -80,18 +81,23 @@ O passo a passo, os textos da ficha, o ícone e as capturas estão em [`store/`]
 
 ```
 src/
-  manifest.json        Manifest V3 (Firefox 140+)
-  background.js        menu de contexto, atalho e preenchimento
-  lib/data.js          nomes, cidades/CEP/DDD, bancos, veículos, tipos de imóvel
-  lib/generators.js    geradores e algoritmos de dígito verificador
-  lib/fill.js          funções injetadas na página (inserir valor / preencher formulário)
-  popup/               interface do popup e da barra lateral
-  fonts/               Inter Tight empacotada (SIL OFL) — sem requisições externas
-  icons/               ícone padrão e versão própria para 16 px
-test/                  testes (node:test + jsdom)
-store/                 material de publicação no AMO
-docs/                  style guide (PDF + HTML de origem) e capturas da interface
+  manifest.json   Manifest V3 (Firefox 140+), módulos ES nativos, sem bundler
+  data/           dados puros: nomes, cidades, bancos, veículos, CEPs reais
+  core/           regras de negócio e algoritmos de dígito verificador (testáveis em Node)
+  content/        funções injetadas na página (inserir valor / preencher formulário) e regras de campos
+  platform/       adaptadores das APIs do Firefox (abas, injeção, armazenamento)
+  features/       casos de uso na página, compartilhados por background e popup
+  background/     menu de contexto e atalho
+  popup/          interface do popup e da barra lateral
+  fonts/ icons/   Inter Tight (SIL OFL) e ícones
+theme/            tema do Firefox (claro/escuro)
+scripts/          build-ceps.mjs — atualiza a base de CEPs reais a partir da ViaCEP
+test/             testes por camada (node:test + jsdom)
+store/            material de publicação no AMO
+docs/             arquitetura, style guide (PDF + HTML) e capturas
 ```
+
+Camadas, padrões de projeto e como estender: [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md).
 
 ## Observações sobre os algoritmos
 

@@ -1,15 +1,20 @@
 {
   "name": "autopreencha",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": true,
+  "type": "module",
   "license": "MIT",
   "description": "Autopreencha: gerador de dados fictícios e preenchimento de formulários para testes.",
   "scripts": {
     "test": "node --test \"test/**/*.test.js\"",
+    "ceps": "node scripts/build-ceps.mjs",
     "lint": "npx --yes web-ext lint --source-dir src",
     "start": "npx --yes web-ext run --source-dir src",
     "build": "npx --yes web-ext build --source-dir src --artifacts-dir dist --overwrite-dest",
     "sign": "npx --yes web-ext sign --channel listed --source-dir src --artifacts-dir dist",
+    "theme:lint": "npx --yes web-ext lint --source-dir theme",
+    "theme:build": "npx --yes web-ext build --source-dir theme --artifacts-dir dist --overwrite-dest",
+    "theme:run": "npx --yes web-ext run --source-dir theme",
     "docs:pdf": "google-chrome-stable --headless=new --disable-gpu --allow-file-access-from-files --no-pdf-header-footer --print-to-pdf=docs/style-guide.pdf \"file://$PWD/docs/style-guide.html\""
   },
   "devDependencies": {
