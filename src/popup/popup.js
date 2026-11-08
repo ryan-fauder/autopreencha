@@ -73,7 +73,7 @@ async function copy(text, row, label) {
   try {
     await navigator.clipboard.writeText(text);
     if (row) flash(row);
-    toast(label ? `${label} copiado` : 'Copiado');
+    toast(label ? `${label} copiado.` : 'Copiado.');
   } catch {
     toast('Não foi possível copiar');
   }
@@ -106,7 +106,7 @@ async function insert(text, row, label) {
     }
     if (results.some((r) => r.result)) {
       if (row) flash(row);
-      toast(`${label || 'Valor'} inserido no campo`);
+      toast(`${label || 'Valor'} inserido no campo.`);
     } else {
       toast('Clique antes em um campo da página');
     }
@@ -362,7 +362,7 @@ $('#fill').addEventListener('click', async () => {
     if (!(await access)) { toast('Permissão negada para acessar a página'); return; }
     const tab = await activeTab();
     const n = await browser.runtime.sendMessage({ type: 'fill-form', tabId: tab.id });
-    toast(n ? `${n} campo(s) autopreenchido(s)` : 'Nenhum campo reconhecido nesta página');
+    toast(n ? `${n} ${n === 1 ? 'campo preenchido' : 'campos preenchidos'}. Nenhuma pessoa real foi incomodada.` : 'Nenhum campo encontrado. Talvez seja só texto.');
   } catch {
     toast('Esta página não permite preenchimento');
   }

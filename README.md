@@ -1,6 +1,6 @@
 <p align="center"><img src="store/icon-128.png" width="96" alt=""></p>
 
-<h1 align="center">Autopreencha</h1>
+<h1 align="center">autopreencha</h1>
 <p align="center"><strong>Gerador de dados fictícios e preenchimento de formulários</strong> — extensão para Firefox</p>
 
 Gera dados brasileiros **fictícios e válidos** (com dígitos verificadores corretos) para testes de software.
@@ -43,6 +43,13 @@ título e inscrição estadual coerentes com o estado escolhido.
 
 Também é possível definir um atalho para abrir/fechar a barra lateral. Os atalhos podem ser alterados em `about:addons` → engrenagem → *Gerenciar atalhos de extensões*.
 
+## Identidade visual
+
+Direção **Minimalista suíço**: grade de 8 pt, Inter Tight, preto/branco/cinza e um único vermelho (`#E4002B`)
+para o que está ativo. O guia completo — marca, ícone, cores com contraste calculado, tipografia, componentes e
+voz — está em [`docs/style-guide.pdf`](docs/style-guide.pdf) (fonte: `docs/style-guide.html`,
+regenerar com `npm run docs:pdf`).
+
 ## Instalação para desenvolvimento
 
 1. Abra `about:debugging#/runtime/this-firefox`.
@@ -62,6 +69,7 @@ npm test         # testes dos algoritmos e do preenchimento de formulários
 npm run lint     # validação da Mozilla (web-ext lint)
 npm run build    # gera o .zip em dist/ para publicar no addons.mozilla.org
 npm run sign     # envia uma nova versão ao AMO (requer chaves de API)
+npm run docs:pdf # gera docs/style-guide.pdf a partir do HTML (requer Google Chrome)
 ```
 
 ## Publicação
@@ -77,9 +85,12 @@ src/
   lib/data.js          nomes, cidades/CEP/DDD, bancos, veículos, tipos de imóvel
   lib/generators.js    geradores e algoritmos de dígito verificador
   lib/fill.js          funções injetadas na página (inserir valor / preencher formulário)
-  popup/               interface do popup
+  popup/               interface do popup e da barra lateral
+  fonts/               Inter Tight empacotada (SIL OFL) — sem requisições externas
+  icons/               ícone padrão e versão própria para 16 px
 test/                  testes (node:test + jsdom)
 store/                 material de publicação no AMO
+docs/                  style guide (PDF + HTML de origem) e capturas da interface
 ```
 
 ## Observações sobre os algoritmos

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Versão para 16 px: linhas alinhadas à grade de pixels -->
+  <rect width="16" height="16" fill="#E4002B"/>
+  <rect x="3" y="3" width="10" height="2" fill="#FFFFFF"/>
+  <rect x="3" y="7" width="10" height="2" fill="#FFFFFF"/>
+  <rect x="3" y="11" width="5" height="2" fill="#FFFFFF"/>
+</svg>

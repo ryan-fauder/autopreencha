@@ -3,6 +3,18 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento
 [SemVer](https://semver.org/lang/pt-BR/). A versão também fica em `src/manifest.json` e `package.json`.
 
+## [1.3.0] - 2026-11-08
+
+### Alterado
+- Identidade **Minimalista suíço**: ícone vermelho com três linhas de formulário (versão própria para 16 px),
+  preto/branco/cinza com um único vermelho de ação, filetes no lugar de caixas e raio zero, nos temas claro e escuro.
+- Fonte Inter Tight empacotada na extensão (sem requisições externas).
+- Avisos com a voz do guia ("Nenhuma pessoa real foi incomodada.").
+- Capturas e ícone da loja refeitos no novo estilo.
+
+### Adicionado
+- Style guide em `docs/style-guide.pdf` (fonte HTML e script `npm run docs:pdf`).
+
 ## [1.2.0] - 2026-11-08
 
 ### Alterado

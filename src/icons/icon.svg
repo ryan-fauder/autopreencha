@@ -1,10 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Autopreencha: ficha com um campo preenchido + selo de preenchimento automático -->
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="#1D4ED8"/>
-  <rect x="11" y="10" width="32" height="42" rx="5" fill="#FFFFFF"/>
-  <rect x="16" y="18" width="22" height="5" rx="2.5" fill="#C7D5FB"/>
-  <rect x="16" y="28" width="22" height="5" rx="2.5" fill="#1D4ED8"/>
-  <rect x="16" y="38" width="13" height="5" rx="2.5" fill="#C7D5FB"/>
-  <circle cx="45" cy="45" r="13" fill="#F59E0B" stroke="#1D4ED8" stroke-width="3"/>
-  <path d="M47 35.5 L39 47 H44.5 L43 54.5 L51 43 H45.5 Z" fill="#0F1E46"/>
+  <!-- Autopreencha: três linhas de formulário; a última, pela metade, é o campo sendo preenchido -->
+  <rect width="64" height="64" fill="#E4002B"/>
+  <rect x="12" y="16" width="40" height="6" fill="#FFFFFF"/>
+  <rect x="12" y="29" width="40" height="6" fill="#FFFFFF"/>
+  <rect x="12" y="42" width="20" height="6" fill="#FFFFFF"/>
 </svg>
