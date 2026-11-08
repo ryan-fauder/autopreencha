@@ -10,7 +10,7 @@ async function buildMenus() {
   await browser.menus.removeAll();
   const { mask } = await getSettings();
 
-  browser.menus.create({ id: 'fd-root', title: 'Dados fictícios', contexts: ['editable', 'page'] });
+  browser.menus.create({ id: 'fd-root', title: 'Autopreencha', contexts: ['editable', 'page'] });
   browser.menus.create({ id: 'fd-fill', parentId: 'fd-root', title: 'Preencher formulário inteiro', contexts: ['editable', 'page'] });
   browser.menus.create({ id: 'fd-sep1', parentId: 'fd-root', type: 'separator', contexts: ['editable'] });
 

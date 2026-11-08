@@ -43,13 +43,13 @@ aparece na busca do AMO.
 
 ## Textos da ficha
 
-**Nome**
-Gerador de Dados Fictícios BR
+**Nome** (41 de 50 caracteres permitidos)
+Autopreencha – Gerador de dados fictícios
 
 **Resumo** (até 250 caracteres)
-Gere CPF, CNPJ (inclusive alfanumérico), RG, CNH, PIS, CNS, título, Inscrição Estadual, cartão, conta,
-placa, RENAVAM, endereço e imóvel válidos para testes. Copie, insira no campo ou preencha o formulário
-inteiro com um clique.
+Preenchimento automático de formulários com dados fictícios válidos: CPF, CNPJ (inclusive alfanumérico),
+RG, CNH, PIS, CNS, título, Inscrição Estadual, cartão, conta, placa, RENAVAM, endereço e imóvel. Para
+testes de software.
 
 **Categoria**
 Ferramentas de desenvolvimento (Web Development)
@@ -64,8 +64,8 @@ Não é necessária: a extensão não coleta, armazena remotamente nem transmite
 **Descrição**
 
 ```
-Gerador de dados fictícios brasileiros para desenvolvedores, QAs e estudantes testarem software.
-Todos os documentos têm dígitos verificadores válidos.
+Autopreencha preenche formulários com dados brasileiros fictícios para desenvolvedores, QAs e
+estudantes testarem software. Todos os documentos têm dígitos verificadores válidos.
 
 O QUE GERA
 • Pessoa: nome, nascimento, CPF, RG, CNH, PIS/PASEP, CNS (Cartão SUS), título de eleitor, passaporte,
@@ -81,7 +81,7 @@ COMO USAR
 • Clique em qualquer valor para copiar
 • Botão "inserir" coloca o valor direto no campo selecionado da página
 • "Preencher página" (Alt+Shift+P) preenche o formulário inteiro com uma mesma pessoa fictícia
-• Botão direito em um campo → Dados fictícios → escolha o tipo
+• Botão direito em um campo → Autopreencha → escolha o tipo
 • Fixe na barra lateral para mantê-la aberta enquanto testa
 • Com ou sem máscara, e coerente com a UF escolhida (endereço, DDD, CPF, título e IE)
 
@@ -107,5 +107,5 @@ Permissions:
 - clipboardWrite: copy values from the popup.
 
 To test: open any page with a form, click the toolbar icon, then "Preencher página";
-or right-click a text field → "Dados fictícios" → "Pessoa" → "CPF".
+or right-click a text field → "Autopreencha" → "Pessoa" → "CPF".
 ```

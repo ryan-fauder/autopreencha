@@ -3,6 +3,14 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento
 [SemVer](https://semver.org/lang/pt-BR/). A versão também fica em `src/manifest.json` e `package.json`.
 
+## [1.2.0] - 2026-11-08
+
+### Alterado
+- Nova identidade: a extensão passa a se chamar **Autopreencha – Gerador de dados fictícios**.
+- Ícone novo (ficha com campo preenchido e selo de preenchimento automático) e paleta azul com destaque âmbar.
+- Cabeçalho com nome e descritor; textos do menu de contexto, atalhos, loja e documentação atualizados.
+- ID da extensão alterado para `autopreencha@ryanfauder` (antes da primeira publicação).
+
 ## [1.1.1] - 2026-11-08
 
 ### Corrigido

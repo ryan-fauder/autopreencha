@@ -1,19 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "Gerador de Dados Fictícios BR",
-  "version": "1.1.1",
-  "description": "Gera CPF, CNPJ (inclusive alfanumérico), RG, CNH, PIS, CNS, título, IE, cartão, contas, placas, RENAVAM, endereços e imóveis para testes de software.",
+  "name": "Autopreencha – Gerador de dados fictícios",
+  "short_name": "Autopreencha",
+  "version": "1.2.0",
+  "description": "Preenche formulários com dados fictícios válidos: CPF, CNPJ, RG, CNH, PIS, CNS, IE, cartão, placa, endereço e mais.",
   "icons": {
     "48": "icons/icon.svg",
     "96": "icons/icon.svg"
   },
   "action": {
-    "default_title": "Gerador de Dados Fictícios",
+    "default_title": "Autopreencha",
     "default_popup": "popup/popup.html",
     "default_icon": "icons/icon.svg"
   },
   "sidebar_action": {
-    "default_title": "Dados Fictícios",
+    "default_title": "Autopreencha",
     "default_panel": "popup/popup.html?view=sidebar",
     "default_icon": "icons/icon.svg",
     "open_at_install": false
@@ -41,15 +42,15 @@
       "suggested_key": {
         "default": "Alt+Shift+P"
       },
-      "description": "Preencher o formulário da página com dados fictícios"
+      "description": "Autopreencher o formulário da página com dados fictícios"
     },
     "_execute_sidebar_action": {
-      "description": "Abrir/fechar a barra lateral de dados fictícios"
+      "description": "Abrir/fechar o Autopreencha na barra lateral"
     }
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "gerador-dados-ficticios@ryanfauder",
+      "id": "autopreencha@ryanfauder",
       "strict_min_version": "140.0",
       "data_collection_permissions": {
         "required": [

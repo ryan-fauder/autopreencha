@@ -1,4 +1,7 @@
-# Gerador de Dados Fictícios BR — extensão para Firefox
+<p align="center"><img src="store/icon-128.png" width="96" alt=""></p>
+
+<h1 align="center">Autopreencha</h1>
+<p align="center"><strong>Gerador de dados fictícios e preenchimento de formulários</strong> — extensão para Firefox</p>
 
 Gera dados brasileiros **fictícios e válidos** (com dígitos verificadores corretos) para testes de software.
 Funciona pelo popup da extensão, direto no campo pelo menu de contexto (botão direito) ou preenchendo o
@@ -30,7 +33,7 @@ título e inscrição estadual coerentes com o estado escolhido.
   continua aberta enquanto você usa a página. Popup e barra lateral ficam sincronizados.
 - **Inserir no campo**: o botão ao lado de cada valor insere o valor direto no campo que estava selecionado
   na página, sem copiar e colar. Na barra lateral, o Firefox pede uma vez a permissão de acesso às páginas.
-- **Menu de contexto**: clique com o botão direito num campo → *Dados fictícios* → escolha o tipo. O valor é
+- **Menu de contexto**: clique com o botão direito num campo → *Autopreencha* → escolha o tipo. O valor é
   inserido no campo, já convertido quando o campo é `type="date"`/`number` ou tem `maxlength` menor que o
   valor com máscara.
 - **Preencher formulário inteiro**: botão no popup, item no menu de contexto ou atalho **Alt+Shift+P**.

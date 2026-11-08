@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect x="4" y="12" width="56" height="40" rx="7" fill="#0f766e"/>
-  <circle cx="21" cy="28" r="6" fill="#ccfbf1"/>
-  <path d="M11 44c1.5-6 5.5-9 10-9s8.5 3 10 9z" fill="#ccfbf1"/>
-  <rect x="36" y="24" width="18" height="4" rx="2" fill="#ccfbf1"/>
-  <rect x="36" y="32" width="14" height="4" rx="2" fill="#5eead4"/>
-  <rect x="36" y="40" width="10" height="4" rx="2" fill="#5eead4"/>
+  <!-- Autopreencha: ficha com um campo preenchido + selo de preenchimento automático -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#1D4ED8"/>
+  <rect x="11" y="10" width="32" height="42" rx="5" fill="#FFFFFF"/>
+  <rect x="16" y="18" width="22" height="5" rx="2.5" fill="#C7D5FB"/>
+  <rect x="16" y="28" width="22" height="5" rx="2.5" fill="#1D4ED8"/>
+  <rect x="16" y="38" width="13" height="5" rx="2.5" fill="#C7D5FB"/>
+  <circle cx="45" cy="45" r="13" fill="#F59E0B" stroke="#1D4ED8" stroke-width="3"/>
+  <path d="M47 35.5 L39 47 H44.5 L43 54.5 L51 43 H45.5 Z" fill="#0F1E46"/>
 </svg>

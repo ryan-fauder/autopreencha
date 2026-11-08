@@ -362,7 +362,7 @@ $('#fill').addEventListener('click', async () => {
     if (!(await access)) { toast('Permissão negada para acessar a página'); return; }
     const tab = await activeTab();
     const n = await browser.runtime.sendMessage({ type: 'fill-form', tabId: tab.id });
-    toast(n ? `${n} campo(s) preenchido(s)` : 'Nenhum campo reconhecido nesta página');
+    toast(n ? `${n} campo(s) autopreenchido(s)` : 'Nenhum campo reconhecido nesta página');
   } catch {
     toast('Esta página não permite preenchimento');
   }
