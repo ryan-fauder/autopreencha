@@ -1,0 +1,15 @@
+# Dependências
+node_modules/
+
+# Pacotes gerados (npm run build / web-ext)
+dist/
+web-ext-artifacts/
+*.xpi
+.web-extension-id
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

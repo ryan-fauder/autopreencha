@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dados Fictícios</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <div class="title-row">
+      <div class="brand">
+        <img src="../icons/icon.svg" alt="" width="20" height="20">
+        <h1>Dados Fictícios</h1>
+      </div>
+      <button id="pin" class="icon-btn" type="button" aria-label="Fixar na barra lateral" title="Fixar na barra lateral (fica aberto enquanto você usa a página)">
+        <svg aria-hidden="true"><use href="#i-pin"/></svg>
+        <span class="pin-label">Fixar</span>
+      </button>
+    </div>
+
+    <div class="toolbar">
+      <label class="field-uf" title="Estado usado no endereço, DDD, CPF, título e IE">
+        <span class="sr-only">Estado (UF)</span>
+        <select id="uf"><option value="">UF aleatória</option></select>
+      </label>
+      <label class="switch" title="Gerar valores com pontuação">
+        <input type="checkbox" id="mask" role="switch" checked>
+        <span class="track" aria-hidden="true"><span class="thumb"></span></span>
+        <span>Máscara</span>
+      </label>
+      <button id="fill" class="primary" type="button" title="Preenche todos os campos reconhecidos da página (Alt+Shift+P)">
+        <svg aria-hidden="true"><use href="#i-bolt"/></svg>
+        Preencher página
+      </button>
+    </div>
+
+    <nav class="tabs" role="tablist" aria-label="Tipos de dados">
+      <button role="tab" type="button" data-tab="gerador">Gerador</button>
+      <button role="tab" type="button" data-tab="pessoa">Pessoa</button>
+      <button role="tab" type="button" data-tab="empresa">Empresa</button>
+      <button role="tab" type="button" data-tab="financeiro">Financeiro</button>
+      <button role="tab" type="button" data-tab="veiculo">Veículo</button>
+      <button role="tab" type="button" data-tab="imovel">Imóvel</button>
+      <button role="tab" type="button" data-tab="bancos">Bancos</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="tab-gerador" class="panel" role="tabpanel" hidden>
+      <div class="panel-bar">
+        <label class="search">
+          <svg aria-hidden="true"><use href="#i-search"/></svg>
+          <span class="sr-only">Filtrar tipos</span>
+          <input id="filter" type="search" placeholder="Filtrar: cpf, placa, cartão…" autocomplete="off">
+        </label>
+        <button type="button" data-action="regen-quick" title="Gerar novos valores para todos">
+          <svg aria-hidden="true"><use href="#i-refresh"/></svg> Todos
+        </button>
+      </div>
+      <div id="quick"></div>
+    </section>
+
+    <section id="tab-pessoa" class="panel" role="tabpanel" hidden>
+      <div class="panel-bar">
+        <button type="button" class="accent" data-action="new-pessoa"><svg aria-hidden="true"><use href="#i-refresh"/></svg> Nova pessoa</button>
+        <button type="button" class="ghost" data-action="json-pessoa">Copiar JSON</button>
+      </div>
+      <div id="pessoa"></div>
+    </section>
+
+    <section id="tab-empresa" class="panel" role="tabpanel" hidden>
+      <div class="panel-bar">
+        <button type="button" class="accent" data-action="new-empresa"><svg aria-hidden="true"><use href="#i-refresh"/></svg> Nova empresa</button>
+        <button type="button" class="ghost" data-action="json-empresa">Copiar JSON</button>
+      </div>
+      <div id="empresa"></div>
+    </section>
+
+    <section id="tab-financeiro" class="panel" role="tabpanel" hidden>
+      <h2>Conta bancária</h2>
+      <div class="panel-bar">
+        <select id="bank" aria-label="Banco"><option value="">Banco aleatório</option></select>
+        <button type="button" class="accent" data-action="new-conta"><svg aria-hidden="true"><use href="#i-refresh"/></svg> Gerar</button>
+      </div>
+      <div id="conta"></div>
+      <h2>Cartão de crédito</h2>
+      <div class="panel-bar">
+        <select id="brand" aria-label="Bandeira"><option value="">Bandeira aleatória</option></select>
+        <button type="button" class="accent" data-action="new-cartao"><svg aria-hidden="true"><use href="#i-refresh"/></svg> Gerar</button>
+      </div>
+      <div id="cartao"></div>
+    </section>
+
+    <section id="tab-veiculo" class="panel" role="tabpanel" hidden>
+      <div class="panel-bar">
+        <button type="button" class="accent" data-action="new-veiculo"><svg aria-hidden="true"><use href="#i-refresh"/></svg> Novo veículo</button>
+        <button type="button" class="ghost" data-action="json-veiculo">Copiar JSON</button>
+      </div>
+      <div id="veiculo"></div>
+    </section>
+
+    <section id="tab-imovel" class="panel" role="tabpanel" hidden>
+      <div class="panel-bar">
+        <button type="button" class="accent" data-action="new-imovel"><svg aria-hidden="true"><use href="#i-refresh"/></svg> Novo imóvel</button>
+        <button type="button" class="ghost" data-action="json-imovel">Copiar JSON</button>
+      </div>
+      <div id="imovel"></div>
+    </section>
+
+    <section id="tab-bancos" class="panel" role="tabpanel" hidden>
+      <div class="panel-bar">
+        <label class="search">
+          <svg aria-hidden="true"><use href="#i-search"/></svg>
+          <span class="sr-only">Buscar banco</span>
+          <input id="bank-search" type="search" placeholder="Buscar por código ou nome…" autocomplete="off">
+        </label>
+      </div>
+      <ul id="bank-list" class="bank-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <span><kbd>clique</kbd> copia</span>
+    <span><svg aria-hidden="true"><use href="#i-insert"/></svg> insere no campo selecionado da página</span>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Ícones (inline para não depender de rede) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+      <symbol id="i-insert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 10v4"/><path d="M12 12h5"/><path d="M15 10l2 2-2 2"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5"/><path d="M9 3h6l-1 6 3 3v2H7v-2l3-3z"/></symbol>
+      <symbol id="i-unpin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    </defs>
+  </svg>
+
+  <script src="../lib/data.js"></script>
+  <script src="../lib/generators.js"></script>
+  <script src="../lib/fill.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

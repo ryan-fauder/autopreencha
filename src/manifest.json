@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "Gerador de Dados Fictícios BR",
+  "version": "1.1.0",
+  "description": "Gera CPF, CNPJ (inclusive alfanumérico), RG, CNH, PIS, CNS, título, IE, cartão, contas, placas, RENAVAM, endereços e imóveis para testes de software.",
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+  "action": {
+    "default_title": "Gerador de Dados Fictícios",
+    "default_popup": "popup/popup.html",
+    "default_icon": "icons/icon.svg"
+  },
+  "sidebar_action": {
+    "default_title": "Dados Fictícios",
+    "default_panel": "popup/popup.html?view=sidebar",
+    "default_icon": "icons/icon.svg",
+    "open_at_install": false
+  },
+  "background": {
+    "scripts": [
+      "lib/data.js",
+      "lib/generators.js",
+      "lib/fill.js",
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "menus",
+    "storage",
+    "activeTab",
+    "scripting",
+    "clipboardWrite"
+  ],
+  "optional_host_permissions": [
+    "<all_urls>"
+  ],
+  "commands": {
+    "fill-form": {
+      "suggested_key": {
+        "default": "Alt+Shift+P"
+      },
+      "description": "Preencher o formulário da página com dados fictícios"
+    },
+    "_execute_sidebar_action": {
+      "description": "Abrir/fechar a barra lateral de dados fictícios"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "gerador-dados-ficticios@ryanfauder",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  }
+}

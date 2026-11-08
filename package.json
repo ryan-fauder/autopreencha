@@ -1,0 +1,15 @@
+{
+  "name": "gerador-dados-ficticios-firefox",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Extensão do Firefox para gerar dados fictícios brasileiros para testes.",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\"",
+    "lint": "npx --yes web-ext lint --source-dir src",
+    "start": "npx --yes web-ext run --source-dir src",
+    "build": "npx --yes web-ext build --source-dir src --artifacts-dir dist --overwrite-dest"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  }
+}
