@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Gerador de Dados Fictícios BR",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Gera CPF, CNPJ (inclusive alfanumérico), RG, CNH, PIS, CNS, título, IE, cartão, contas, placas, RENAVAM, endereços e imóveis para testes de software.",
   "icons": {
     "48": "icons/icon.svg",

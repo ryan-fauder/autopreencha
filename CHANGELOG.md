@@ -3,6 +3,14 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento
 [SemVer](https://semver.org/lang/pt-BR/). A versão também fica em `src/manifest.json` e `package.json`.
 
+## [1.1.1] - 2026-11-08
+
+### Corrigido
+- Nome da mãe/pai podia repetir o mesmo sobrenome em sequência (ex.: "Márcia Rocha Rocha").
+
+### Adicionado
+- Material de publicação no addons.mozilla.org (`store/`) e script `npm run sign`.
+
 ## [1.1.0] - 2026-11-08
 
 ### Adicionado

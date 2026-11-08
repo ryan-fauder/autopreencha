@@ -215,3 +215,11 @@ test('generate() sem máscara remove pontuação, mas mantém texto', () => {
     else assert.match(v, /^[0-9A-Z]+$/, `${t.id}: ${v}`);
   }
 });
+
+test('Nomes não repetem sobrenome em sequência', () => times(() => {
+  const p = F.pessoa();
+  for (const n of [p.nome, p.mae, p.pai]) {
+    const parts = n.split(' ');
+    assert.ok(parts.every((w, i) => i === 0 || w !== parts[i - 1]), n);
+  }
+}));

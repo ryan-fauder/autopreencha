@@ -58,7 +58,12 @@ npm start        # abre um Firefox limpo com a extensão carregada (web-ext run)
 npm test         # testes dos algoritmos e do preenchimento de formulários
 npm run lint     # validação da Mozilla (web-ext lint)
 npm run build    # gera o .zip em dist/ para publicar no addons.mozilla.org
+npm run sign     # envia uma nova versão ao AMO (requer chaves de API)
 ```
+
+## Publicação
+
+O passo a passo, os textos da ficha, o ícone e as capturas estão em [`store/`](store/PUBLICACAO.md).
 
 ## Estrutura
 
@@ -71,6 +76,7 @@ src/
   lib/fill.js          funções injetadas na página (inserir valor / preencher formulário)
   popup/               interface do popup
 test/                  testes (node:test + jsdom)
+store/                 material de publicação no AMO
 ```
 
 ## Observações sobre os algoritmos
