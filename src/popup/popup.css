@@ -104,11 +104,13 @@ button.ghost:hover { background: transparent; color: var(--accent); }
 
 select {
   min-height: 32px;
-  background: transparent;
+  background: var(--bg);
   border: none;
   border-bottom: 1px solid var(--rule);
   padding: 4px 0;
 }
+/* A lista aberta é nativa: sem cor explícita, no tema escuro herda texto claro sobre o fundo claro do sistema. */
+option { background: var(--bg); color: var(--text); }
 #uf { max-width: 140px; }
 
 :is(button, select, input, [tabindex]):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

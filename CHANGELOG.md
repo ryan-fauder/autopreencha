@@ -3,6 +3,18 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento
 [SemVer](https://semver.org/lang/pt-BR/). A versão também fica em `src/manifest.json` e `package.json`.
 
+## [1.4.1] - 2026-11-09
+
+### Adicionado
+- Versão para Chrome: `npm run build:chrome` gera `dist/chrome/` e o `.zip` para a Chrome Web Store
+  (service worker, menu de contexto e painel lateral do Chrome, ícones PNG).
+- Política de privacidade em `docs/privacidade.html`, publicada pelo GitHub Pages.
+- Blocos promocionais da Chrome Web Store em `store/`.
+
+### Corrigido
+- Menus de seleção (UF, banco, bandeira) ilegíveis no tema escuro: a lista aberta mostrava texto claro
+  sobre o fundo claro do sistema.
+
 ## [1.4.0] - 2026-11-08
 
 ### Corrigido

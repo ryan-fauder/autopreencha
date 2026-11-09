@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Autopreencha – Gerador de dados fictícios",
   "short_name": "Autopreencha",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Preenche formulários com dados fictícios válidos: CPF, CNPJ, RG, CNH, PIS, CNS, IE, cartão, placa, endereço e mais.",
   "icons": {
     "16": "icons/icon-16.svg",
