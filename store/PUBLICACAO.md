@@ -6,6 +6,8 @@ Tudo o que a ficha da extensão pede está nesta pasta:
 |---|---|
 | `icon-128.png` | Ícone da ficha (128×128) |
 | `screenshots/*.png` | Capturas de tela (1280×800) |
+| `../docs/privacidade.html` | Política de privacidade (publicada pelo GitHub Pages) |
+| `promo-440x280.png`, `promo-1400x560.png` | Blocos promocionais pequeno e de letreiro da Chrome Web Store (fonte em `promo/`) |
 | Seções abaixo | Textos para copiar e colar nos campos do formulário |
 
 ## Primeira publicação (pelo site)

@@ -1,6 +1,6 @@
 /**
- * Padrão Adapter: único ponto que conversa com as APIs de abas, permissões, injeção e barra lateral.
- * O resto do código pede "rode isto na página" sem conhecer os detalhes nem os casos de erro do Firefox.
+ * Padrão Adapter: único ponto que conversa com as APIs de abas, permissões e injeção.
+ * O resto do código pede "rode isto na página" sem conhecer os detalhes nem os casos de erro do navegador.
  */
 
 export async function getActiveTab() {
@@ -28,6 +28,3 @@ export async function runInPage(tabId, func, args = [], { frameId } = {}) {
     return run({ tabId });
   }
 }
-
-export const openSidebar = () => browser.sidebarAction.open();
-export const closeSidebar = () => browser.sidebarAction.close();

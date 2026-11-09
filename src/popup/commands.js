@@ -3,7 +3,8 @@
  * resultado sem decidir como mostrá-lo (isso é papel de quem chama).
  */
 import { fillPage, insertIntoPage } from '../features/page-actions.js';
-import { closeSidebar, getActiveTab, openSidebar, requestHostAccess } from '../platform/browser-page.js';
+import { getActiveTab, requestHostAccess } from '../platform/browser-page.js';
+import { closeSidebar, openSidebar } from '../platform/sidebar.js';
 
 export function createCommands({ isSidebar }) {
   /**

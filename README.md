@@ -52,6 +52,11 @@ regenerar com `npm run docs:pdf`).
 
 ## Instalação para desenvolvimento
 
+**Chrome:** rode `npm run build:chrome`, abra `chrome://extensions`, ative o *Modo do desenvolvedor* e use
+*Carregar sem compactação* com a pasta `dist/chrome/`.
+
+**Firefox:**
+
 1. Abra `about:debugging#/runtime/this-firefox`.
 2. Clique em **Carregar extensão temporária…** e selecione `src/manifest.json`.
 
@@ -68,6 +73,7 @@ npm start        # abre um Firefox limpo com a extensão carregada (web-ext run)
 npm test         # testes dos algoritmos e do preenchimento de formulários
 npm run lint     # validação da Mozilla (web-ext lint)
 npm run build    # gera o .zip em dist/ para publicar no addons.mozilla.org
+npm run build:chrome # gera dist/chrome/ e o .zip para a Chrome Web Store (requer python3)
 npm run sign     # envia uma nova versão ao AMO (requer chaves de API)
 npm run docs:pdf # gera docs/style-guide.pdf a partir do HTML (requer Google Chrome)
 npm run ceps     # atualiza src/data/ceps.js com CEPs reais (consulta a API ViaCEP)
@@ -91,7 +97,8 @@ src/
   popup/          interface do popup e da barra lateral
   fonts/ icons/   Inter Tight (SIL OFL) e ícones
 theme/            tema do Firefox (claro/escuro)
-scripts/          build-ceps.mjs — atualiza a base de CEPs reais a partir da ViaCEP
+chrome/           módulos que substituem os de src/ no build do Chrome (barra lateral → sidePanel)
+scripts/          build-ceps.mjs (CEPs reais da ViaCEP) e build-chrome.mjs (versão para Chrome)
 test/             testes por camada (node:test + jsdom)
 store/            material de publicação no AMO
 docs/             arquitetura, style guide (PDF + HTML) e capturas

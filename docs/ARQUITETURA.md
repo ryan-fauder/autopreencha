@@ -25,7 +25,7 @@ background, popup  →  features  →  core, content, platform  →  data
 ```
 
 - `core` nunca importa `platform`, `popup` ou `background`.
-- Só `platform` chama `browser.*`. O resto pede "rode isto na página" ou "salve isto" sem saber como.
+- Só `platform` chama `browser.*` (exceto o registro de listeners em `background/`). O resto pede "rode isto na página" ou "salve isto" sem saber como.
 - `content` não importa nada em tempo de execução: o Firefox serializa a função antes de injetá-la.
 
 ## Padrões de projeto
@@ -52,6 +52,16 @@ background, popup  →  features  →  core, content, platform  →  data
 2. Toda mudança passa por `update()`, que completa o que faltar com `popup/generation.js`.
 3. O store notifica: `views/render.js` redesenha e os repositórios gravam. Popup e barra lateral se
    sincronizam pelo `storage.onChanged`, ignorando o eco das próprias gravações.
+
+## Firefox e Chrome
+
+`src/` é a versão do Firefox e é publicada como está. `npm run build:chrome` gera `dist/chrome/` a partir dela:
+
+- o manifest é derivado de `src/manifest.json` (service worker, `contextMenus`, `side_panel`, ícones PNG);
+- `platform/compat.js`, primeiro import do background e do popup, aponta `browser` para `chrome` e
+  `menus` para `contextMenus`;
+- os arquivos de `chrome/` substituem os de mesmo caminho: hoje só `platform/sidebar.js`, porque a barra
+  lateral do Firefox (`sidebarAction`) e o painel lateral do Chrome (`sidePanel`) não têm API comum.
 
 ## Dados gerados fora da extensão
 

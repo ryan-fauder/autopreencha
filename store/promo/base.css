@@ -1,0 +1,6 @@
+@font-face { font-family: 'Inter Tight'; src: url('../../src/fonts/InterTight-latin.woff2') format('woff2'); font-weight: 100 900; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { background: #fff; color: #111; font-family: 'Inter Tight', sans-serif; overflow: hidden; }
+.logo { font-weight: 800; letter-spacing: -.04em; line-height: .9; }
+.muted { color: #5f5f5f; }
+.num { font-variant-numeric: tabular-nums; }

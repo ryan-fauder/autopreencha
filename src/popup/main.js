@@ -2,6 +2,7 @@
  * Raiz de composição do popup e da barra lateral (a mesma página, com ?view=sidebar).
  * Só conecta as peças: repositórios → estado → renderização, e eventos da interface → comandos.
  */
+import '../platform/compat.js';
 import { CARD_BRANDS } from '../core/finance.js';
 import { BANKS } from '../data/banks.js';
 import { STATES, UFS } from '../data/places.js';

@@ -1,0 +1,32 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+body { width: 1400px; height: 560px; display: grid; grid-template-columns: 1fr 560px; gap: 80px; padding: 72px 80px; }
+.left { display: flex; flex-direction: column; justify-content: space-between; }
+.logo { font-size: 84px; margin-top: 28px; }
+.desc { font-size: 26px; margin-top: 12px; }
+h1 { font-size: 32px; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; max-width: 640px; }
+h1 span { color: #E4002B; }
+.form { align-self: center; border-top: 2px solid #111; }
+.row { display: grid; grid-template-columns: 170px 1fr; align-items: baseline; padding: 15px 0; border-bottom: 1px solid #d9d9d9; }
+.k { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #5f5f5f; }
+.v { font-size: 25px; font-weight: 500; }
+.row.active { border-bottom: 2px solid #E4002B; }
+.row.active .k { color: #E4002B; }
+.caret { display: inline-block; width: 2px; height: 26px; background: #E4002B; margin-left: 3px; vertical-align: -3px; }
+</style></head><body>
+<div class="left">
+  <div>
+    <svg width="80" height="80" viewBox="0 0 64 64"><rect width="64" height="64" fill="#E4002B"/><rect x="12" y="16" width="40" height="6" fill="#fff"/><rect x="12" y="29" width="40" height="6" fill="#fff"/><rect x="12" y="42" width="20" height="6" fill="#fff"/></svg>
+    <div class="logo">autopreencha</div>
+    <div class="desc muted">Gerador de dados fictícios</div>
+  </div>
+  <h1>Formulários preenchidos em um clique, com <span>dígitos verificadores válidos</span>.</h1>
+</div>
+<div class="form">
+  <div class="row"><span class="k">Nome</span><span class="v">Heitor Xavier Campos</span></div>
+  <div class="row"><span class="k">CPF</span><span class="v num">513.252.928-34</span></div>
+  <div class="row"><span class="k">CNPJ</span><span class="v num">88.769.679/0001-29</span></div>
+  <div class="row"><span class="k">Placa</span><span class="v num">WOZ8M46</span></div>
+  <div class="row active"><span class="k">CEP</span><span class="v num">13054-7<i class="caret"></i></span></div>
+</div>
+</body></html>

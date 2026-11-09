@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacidade do Autopreencha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap">
+<style>
+  :root {
+    --bg: #ffffff; --ink: #111111; --muted: #5f5f5f; --rule: #d9d9d9; --red: #e4002b; --soft: #f5f5f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121212; --ink: #f2f2f2; --muted: #a3a3a3; --rule: #333333; --red: #ff3355; --soft: #1c1c1c;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121212; --ink: #f2f2f2; --muted: #a3a3a3; --rule: #333333; --red: #ff3355; --soft: #1c1c1c;
+    color-scheme: dark;
+  }
+  body {
+    background: var(--bg); color: var(--ink);
+    font: 400 16px/1.6 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    padding: 0 16px;
+  }
+  main { max-width: 680px; margin: 0 auto; padding-block: 48px 72px; }
+  header { display: flex; align-items: flex-end; gap: 16px; padding-bottom: 24px; border-bottom: 2px solid var(--ink); }
+  header svg { flex: none; }
+  .logo { font-weight: 800; font-size: 32px; letter-spacing: -.04em; line-height: .9; }
+  .desc { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  h1 { font-size: clamp(28px, 6vw, 40px); font-weight: 700; letter-spacing: -.02em; line-height: 1.1; margin: 40px 0 8px; text-wrap: balance; }
+  .meta { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .lead { margin-top: 32px; padding: 20px 24px; background: var(--soft); border-left: 3px solid var(--red); font-size: 18px; font-weight: 500; }
+  section { padding-top: 32px; margin-top: 32px; border-top: 1px solid var(--rule); }
+  h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 12px; }
+  p + p, p + ul, ul + p { margin-top: 12px; }
+  ul { padding-left: 20px; display: grid; gap: 6px; }
+  code { font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: .9em; background: var(--soft); padding: 1px 5px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .table-wrap { overflow-x: auto; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); }
+  th { font-weight: 700; white-space: nowrap; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#E4002B"/><rect x="12" y="16" width="40" height="6" fill="#fff"/><rect x="12" y="29" width="40" height="6" fill="#fff"/><rect x="12" y="42" width="20" height="6" fill="#fff"/></svg>
+    <div><div class="logo">autopreencha</div><div class="desc">Gerador de dados fictícios</div></div>
+  </header>
+
+  <h1>Política de Privacidade</h1>
+  <p class="meta">Vigente desde 9 de novembro de 2026 · versão 1.4.0 da extensão</p>
+
+  <p class="lead">O Autopreencha não coleta, não armazena em servidores e não transmite nenhum dado pessoal. Tudo acontece dentro do seu navegador.</p>
+
+  <section>
+    <h2>O que a extensão faz</h2>
+    <p>O Autopreencha – Gerador de dados fictícios é uma extensão para Chrome e Firefox que gera dados brasileiros fictícios (CPF, CNPJ, RG, CNH, cartão, placa, endereço e outros) e os insere em formulários web, para testes de software.</p>
+  </section>
+
+  <section>
+    <h2>Dados coletados</h2>
+    <p>Nenhum. A extensão não faz requisições de rede, não usa análises, cookies, rastreadores nem serviços de terceiros, e não tem servidor próprio.</p>
+  </section>
+
+  <section>
+    <h2>O que fica salvo no seu navegador</h2>
+    <p>Usando o armazenamento local da extensão (<code>storage.local</code>), que nunca sai do seu computador, o Autopreencha guarda:</p>
+    <ul>
+      <li>suas preferências: estado (UF) escolhido e se os valores saem com máscara;</li>
+      <li>os últimos valores fictícios gerados, para que não se percam ao fechar o popup.</li>
+    </ul>
+    <p>Esses valores são inventados pela extensão e não pertencem a ninguém. Para apagar tudo, basta remover a extensão.</p>
+  </section>
+
+  <section>
+    <h2>Acesso às páginas</h2>
+    <p>Só depois de uma ação sua (clique no ícone, no menu de contexto ou atalho de teclado), a extensão executa um script na aba atual para escrever os valores nos campos. Para reconhecer cada campo, o script lê atributos como <code>name</code>, <code>id</code>, <code>placeholder</code>, <code>autocomplete</code> e o texto do rótulo. Essas informações são usadas apenas naquele momento, dentro da página, e não são guardadas nem enviadas a lugar nenhum.</p>
+  </section>
+
+  <section>
+    <h2>Permissões</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th>activeTab, scripting</th><td>Inserir o valor no campo ou preencher o formulário da aba atual, após uma ação sua.</td></tr>
+        <tr><th>contextMenus</th><td>Menu “Autopreencha” no botão direito.</td></tr>
+        <tr><th>sidePanel</th><td>Abrir a interface no painel lateral (botão Fixar).</td></tr>
+        <tr><th>storage</th><td>Guardar preferências e os últimos valores gerados, localmente.</td></tr>
+        <tr><th>clipboardWrite</th><td>Copiar um valor quando você clica nele.</td></tr>
+        <tr><th>Acesso a sites (opcional)</th><td>Pedido só quando você insere ou preenche a partir do painel lateral.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Compartilhamento e venda</h2>
+    <p>Como nenhum dado é coletado, nenhum dado é vendido, compartilhado ou transferido a terceiros, nem usado para publicidade, avaliação de crédito ou qualquer finalidade fora do propósito da extensão.</p>
+  </section>
+
+  <section>
+    <h2>Uso responsável</h2>
+    <p>Os dados gerados são fictícios e servem apenas para desenvolvimento, testes e estudo. A má utilização é de responsabilidade do usuário.</p>
+  </section>
+
+  <section>
+    <h2>Alterações e contato</h2>
+    <p>Se esta política mudar, a nova versão será publicada neste mesmo endereço, com a data atualizada. Dúvidas podem ser enviadas pela página de suporte da extensão na Chrome Web Store ou no addons.mozilla.org.</p>
+  </section>
+
+  <footer>Autopreencha · desenvolvido por Ryan Fauder</footer>
+</main>
+</body>
+</html>
