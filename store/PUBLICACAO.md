@@ -115,3 +115,43 @@ Permissions:
 To test: open any page with a form, click the toolbar icon, then "Preencher página";
 or right-click a text field → "Autopreencha" → "Pessoa" → "CPF".
 ```
+
+---
+
+## Chrome Web Store
+
+Pacote: `npm run build:chrome` → `dist/autopreencha-chrome-<versão>.zip`. O resumo da ficha vem do
+`description` do manifest.
+
+**Política de privacidade:** <https://ryan-fauder.github.io/autopreencha/privacidade.html>
+**Página inicial:** <https://github.com/ryan-fauder/autopreencha> · **Suporte:** <https://github.com/ryan-fauder/autopreencha/issues>
+
+**Descrição** (texto puro). Sem listas de marcas, bancos ou documentos: a 1.4.0 foi rejeitada por
+"excessive keywords" por listar as bandeiras de cartão.
+
+```
+Autopreencha gera dados brasileiros fictícios para quem desenvolve, testa ou estuda software. Os documentos saem com dígitos verificadores corretos, então passam pelas mesmas validações de um sistema real, mas não pertencem a ninguém.
+
+O QUE GERA
+
+• Pessoas completas: nome, data de nascimento, documentos pessoais como CPF, RG e CNH, contato e endereço, todos coerentes entre si.
+• Empresas, com CNPJ (inclusive o novo formato alfanumérico) e inscrição estadual de todos os estados.
+• Veículos, com placa no padrão antigo ou Mercosul e RENAVAM.
+• Dados financeiros de teste: cartões de crédito das principais bandeiras e contas bancárias com dígito verificador.
+• Imóveis, com valores, inscrição de IPTU e matrícula.
+• Endereços com CEPs reais, para formulários que consultam o CEP.
+
+COMO USAR
+
+• Clique em "Preencher página" (ou use Alt+Shift+P) para preencher o formulário inteiro com uma mesma pessoa fictícia. Funciona com React, Vue e Angular.
+• Clique com o botão direito em um campo para inserir só o dado que você precisa.
+• No popup, clique em qualquer valor para copiar.
+• Use "Fixar" para manter a extensão aberta no painel lateral enquanto testa.
+• Escolha o estado e se os valores saem com ou sem pontuação.
+
+PRIVACIDADE
+
+Tudo é gerado no seu navegador. Nenhum dado é coletado ou enviado, e a extensão não faz requisições externas.
+
+Os dados são fictícios e servem apenas para testes. A má utilização é de responsabilidade do usuário.
+```

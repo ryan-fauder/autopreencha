@@ -3,6 +3,12 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versionamento
 [SemVer](https://semver.org/lang/pt-BR/). A versão também fica em `src/manifest.json` e `package.json`.
 
+## [1.4.2] - 2026-11-09
+
+### Alterado
+- Resumo da extensão reescrito sem lista de palavras-chave, que a Chrome Web Store rejeita
+  ("Spam and Placement in the Store").
+
 ## [1.4.1] - 2026-11-09
 
 ### Adicionado
